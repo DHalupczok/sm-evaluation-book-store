@@ -6,12 +6,22 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BookSearchComponent } from './book-search/book-search.component';
 import {MdbFormsModule} from "mdb-angular-ui-kit/forms";
+import { BookItemComponent } from './book-item/book-item.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { TableHeadComponent } from './table-head/table-head.component';
+import { SearchButtonComponent } from './search-button/search-button.component';
+import { ResultsQuantityComponent } from './results-quantity/results-quantity.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    BookSearchComponent
+    BookSearchComponent,
+    BookItemComponent,
+    BookListComponent,
+    TableHeadComponent,
+    SearchButtonComponent,
+    ResultsQuantityComponent
   ],
   imports: [
     BrowserModule,
