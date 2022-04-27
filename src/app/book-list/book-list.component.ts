@@ -1,12 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Book} from "../book-search/book-search.component";
 
-export interface Book {
-  id: number
-  title: string
-  author: string
-  publishYear: string
-
-}
 
 @Component({
   selector: 'app-book-list',
@@ -16,34 +10,10 @@ export interface Book {
 
 
 export class BookListComponent implements OnInit {
-books: Book[] = [
-  {
-    id:1,
-    title: "Persuader (Jack Reacher)",
-    author: 'Lee Child',
-    publishYear: '2003,2007,2004,2005'
-  },
-  {
-    id:2,
-    title: "Without Fail (Jack Reacher)",
-    author: 'Lee Child',
-    publishYear: '2003,2002,2007,2004,2006'
-  },
-  {
-    id:3,
-    title: "Persuader (Jack Reacher)",
-    author: 'Lee Child',
-    publishYear: '2003,2007,2004,2005'
-  },
-  {
-    id:4,
-    title: "Without Fail (Jack Reacher)",
-    author: 'Lee Child',
-    publishYear: '2003,2002,2007,2004,2006'
-  }
-]
+  @Input() books: Book[] = []
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

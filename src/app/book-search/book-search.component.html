@@ -2,7 +2,17 @@
   <div class="col-md text-center">
     <h1>Book Search</h1>
     <mdb-form-control>
-      <input mdbInput type="text" id="searchInput" class="form-control" />
+      <input mdbInput type="text" id="searchInput" class="form-control" (input)="modifySearchedBook($event)"/>
     </mdb-form-control>
+  </div>
+  <div class="row">
+    <app-search-button class="w-100 d-flex justify-content-center my-1"
+                       (searchForBooks)="searchForBooks()"></app-search-button>
+  </div>
+  <div class="row">
+    <app-results-quantity class="w-100 d-flex justify-content-center" [quantity]=bookQuantity></app-results-quantity>
+  </div>
+  <div class="row">
+    <app-book-list [books]="books"></app-book-list>
   </div>
 </div>

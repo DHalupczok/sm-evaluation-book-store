@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-search-button',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchButtonComponent implements OnInit {
 
-  constructor() { }
+  @Output() searchForBooks = new EventEmitter();
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
