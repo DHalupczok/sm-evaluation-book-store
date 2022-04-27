@@ -34,9 +34,8 @@ export class BookSearchComponent implements OnInit {
   }
 
   searchForBooks() {
-    this.http.get<any>(this.getProperSearchQuery()).subscribe(
-      response => {
-        console.warn("mój response to ", response)
+    this.http.get<any>(this.getProperSearchQuery()).subscribe({
+      next: response => {
         this.bookQuantity = response.docs.length;
         this.books = response.docs.map((item: any, index: number) => ({
           id: index,
@@ -45,8 +44,13 @@ export class BookSearchComponent implements OnInit {
           author: item?.author_name?.[0] || '',
           publishYear: item?.publish_year?.join()
         }))
+      },
+      error: error => {
+        console.error('error caught in component', error)
+        this.books = []
+        this.bookQuantity = 0;
       }
-    )
+    })
   }
 
   ngOnInit(): void {
