@@ -30,7 +30,7 @@ export class BookSearchComponent implements OnInit {
   }
 
   getProperSearchQuery(): string {
-    return `https://openlibrary.org/search.json?q=${this.searchedBook.toLocaleLowerCase().split(" ").join('+')}&mode=everythink`
+    return `https://openlibrary.org/search.json?title=${this.searchedBook.toLocaleLowerCase().split(" ").join('+')}&mode=everythink`
   }
 
   searchForBooks() {
