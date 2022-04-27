@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 export interface Book {
   id: number
   title: string
+  isbn: string
   author: string
   publishYear: string
 
@@ -40,6 +41,7 @@ export class BookSearchComponent implements OnInit {
         this.books = response.docs.map((item: any, index: number) => ({
           id: index,
           title: item.title,
+          isbn: item.isbn?.[0] || '',
           author: item?.author_name?.[0] || '',
           publishYear: item?.publish_year?.join()
         }))
